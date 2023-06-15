@@ -1,0 +1,88 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+      body{
+        background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,121,75,1) 35%, rgba(8,129,92,1) 41%, rgba(6,34,153,1) 58%, rgba(255,0,134,1) 100%);
+      }
+    </style>
+  </head>
+  <body>
+      
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    <h1 class="bg-success">Add Manager</h1>
+    
+    <form  method="post" enctype="multipart/form-data">
+        {%csrf_token%}
+        
+        <!-- <input type="text" name="fname" placeholder="Enter managers first name : " id="" class="form-control">
+        <input type="text" name="sname" placeholder="Enter managers second name : " id="" class="form-control">
+        <input type="dob" name="age" placeholder="Enter managers age : " id="" class="form-control">
+        <input type="number" name="phone" placeholder="Enter managers number : " id="" class="form-control">
+        <input type="email" name="email" placeholder="Enter managers email : " id="" class="form-control">
+        <input type="text" name="quali" placeholder="Enter managers qualification : " id="" class="form-control">
+        <button class="btn btn-outline-success">submit</button> -->
+
+        <div class="jumbotron container">
+          <div class="row">
+            <div class="col">
+              <div>
+                {{form.FIRST_NAME.errors}}
+                <label for="">Enter First_name</label>
+                {{form.FIRST_NAME}}
+              </div>
+              <div>
+                {{form.SECOND_NAME.errors}}
+                <label for="">Enter Last name</label>
+                {{form.SECOND_NAME}}
+              </div>
+            </div>
+            <div class="col">
+              <div>
+                {{form.DOB.errors}}
+                <label for="">Enter Dob</label>
+                {{form.DOB}}
+              </div>
+              <div>
+                {{form.PHONE.errors}}
+                <label for="">Enter Phone</label>
+                {{form.PHONE}}
+              </div>
+            </div>
+            <div class="col">
+              <div>
+                {{form.EMAIL.errors}}
+                <label for="">Enter Email</label>
+                {{form.EMAIL}}
+              </div>
+              <div>
+                
+                {{form.QUALIFICATION.errors}}
+                <label for="">Enter qualification</label>
+                {{form.QUALIFICATION}}
+              </div>
+            </div>
+            </div>
+            <div align="center">
+              <button class="btn btn-info mt-5">ADD</button>
+          </div>
+          </div>
+
+    </form>
+
+  </body>
+</html>
